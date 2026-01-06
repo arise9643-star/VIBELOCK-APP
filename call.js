@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userName = user.name || user.userName;
 
     // --- Socket.IO Connection ---
-    const socket = io('http://localhost:3000');
+    const socket = io('https://vibelock-app.onrender.com');
 
     // --- WebRTC Configuration ---
     const configuration = {
@@ -206,14 +206,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const startSessionTracking = async () => {
         try {
-            const resp = await fetch(`http://localhost:3000/api/rooms/${roomCode}`, {
+            const resp = await fetch(`https://vibelock-app.onrender.com/api/rooms/${roomCode}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await resp.json();
             if (!resp.ok) return;
             const roomId = data.room.id;
             const pomodoroMinutes = parseInt(timerInput.value) || 45;
-            const startResp = await fetch(`http://localhost:3000/api/sessions/start`, {
+            const startResp = await fetch(`https://vibelock-app.onrender.com/api/sessions/start`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 durationSeconds = Math.floor((Date.now() - meetingStartedAt) / 1000);
             }
             
-            await fetch(`http://localhost:3000/api/sessions/end`, {
+            await fetch(`https://vibelock-app.onrender.com/api/sessions/end`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

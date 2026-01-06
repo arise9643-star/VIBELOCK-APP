@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://vibelock-app.onrender.com';
 
 // Check if user is logged in
 const token = localStorage.getItem('token');
