@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIBELOCK - Session</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="call.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">GRINDER</div>
+            <div class="room-code" id="roomCode">Loading...</div>
+        </div>
+        <div class="session-timer" id="sessionTimer">0:00:00</div>
+    </header>
+    <main class="main-content">
+        <div class="video-grid" id="videoGrid"></div>
+        <div class="timer-overlay">
+            <div class="timer-card">
+                <div class="timer-mode" id="timerMode">Pomodoro</div>
+                <div class="timer-status" id="timerStatus">Ready</div>
+                <div class="timer-display" id="timerDisplay">45:00</div>
+                <div class="timer-controls">
+                    <button class="timer-btn-small" id="startTimerBtn">Start</button>
+                    <button class="timer-btn-small secondary" id="resetBtn">Reset</button>
+                </div>
+                <div class="timer-settings">
+                    <input type="number" id="timerInput" min="1" max="120" value="45" placeholder="Minutes">
+                    <button class="timer-btn-small" id="setTimerBtn">Set</button>
+                    <input type="number" id="breakInput" min="1" max="60" value="10" placeholder="Break">
+                    <button class="timer-btn-small" id="setBreakBtn">Set Break</button>
+                    <select id="musicSelect" class="timer-select">
+                        <option value="lofi">Lofi Study</option>
+                        <option value="rain">Rain Ambient</option>
+                        <option value="white">White Noise</option>
+                        <option value="forest">Forest Ambience</option>
+                        <option value="cafe">Café Ambience</option>
+                    </select>
+                    <button class="timer-btn-small" id="spotifyBtn">Open Spotify</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="controls">
+        <div class="control-left">
+            <button class="control-btn" id="micBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                    <line x1="12" y1="19" x2="12" y2="23"/>
+                    <line x1="8" y1="23" x2="16" y2="23"/>
+                </svg>
+                <span>Mute</span>
+            </button>
+            <button class="control-btn" id="cameraBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M23 7l-7 5 7 5V7z"/>
+                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                </svg>
+                <span>Camera</span>
+            </button>
+            <div class="participant-count-badge">
+                <span id="participantCount">1</span> participants
+            </div>
+        </div>
+        <button class="leave-btn" id="leaveBtn">Leave Session</button>
+        <div class="control-right">
+            
+    </footer>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="call.js"></script>
+</body>
+</html>

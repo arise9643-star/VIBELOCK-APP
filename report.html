@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIBELOCK - Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="report.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo"><a href="home.html">VIBELOCK</a></div>
+        <nav class="sidebar-nav">
+            <a href="home.html" class="nav-item">HOME</a>
+            <a href="report.html" class="nav-item active">REPORTS</a>
+            <a href="history.html" class="nav-item">HISTORY</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1 class="page-title">Detailed Report</h1>
+
+        <!-- Hero Card -->
+        <div class="hero-card">
+            <img src="thumb-1920-201532.jpg" alt="Report Background" class="hero-bg">
+            <div class="hero-content">
+                <span class="hero-label">PERFORMANCE</span>
+                <h2 class="hero-title">ANALYTICS</h2>
+            </div>
+        </div>
+
+        <!-- Stats Overview -->
+        <div class="stats-overview">
+            <div class="overview-card">
+                <div class="card-header">
+                    <h3 class="card-title">Total Sessions</h3>
+                    <span class="card-icon">📊</span>
+                </div>
+                <p class="card-value">0</p>
+            </div>
+
+            <div class="overview-card">
+                <div class="card-header">
+                    <h3 class="card-title">Total Focus Time</h3>
+                    <span class="card-icon">⏱️</span>
+                </div>
+                <p class="card-value">0:00:00</p>
+            </div>
+
+            <div class="overview-card">
+                <div class="card-header">
+                    <h3 class="card-title">Avg. Session</h3>
+                    <span class="card-icon">⚡</span>
+                </div>
+                <p class="card-value">0:00:00</p>
+            </div>
+
+            <div class="overview-card">
+                <div class="card-header">
+                    <h3 class="card-title">Pomodoros</h3>
+                    <span class="card-icon">🍅</span>
+                </div>
+                <p class="card-value">0</p>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-section">
+            <!-- Focus Distribution -->
+            <div class="chart-card">
+                <h3 class="chart-title">Focus Distribution</h3>
+                <div class="distribution-chart">
+                    <div class="distribution-item">
+                        <span class="label-text">Focused</span>
+                        <div class="distribution-bar">
+                            <div class="distribution-fill focused" style="width: 0%;"></div>
+                        </div>
+                        <span class="label-value">0%</span>
+                    </div>
+                    <div class="distribution-item">
+                        <span class="label-text">Neutral</span>
+                        <div class="distribution-bar">
+                            <div class="distribution-fill neutral" style="width: 0%;"></div>
+                        </div>
+                        <span class="label-value">0%</span>
+                    </div>
+                    <div class="distribution-item">
+                        <span class="label-text">Distracted</span>
+                        <div class="distribution-bar">
+                            <div class="distribution-fill distracted" style="width: 0%;"></div>
+                        </div>
+                        <span class="label-value">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Achievements Section -->
+        <div class="achievements-section">
+            <h3 class="section-title">Recent Achievements</h3>
+            <div class="achievements-grid">
+            </div>
+        </div>
+    </main>
+    <script src="report.js"></script>
+</body>
+</html>

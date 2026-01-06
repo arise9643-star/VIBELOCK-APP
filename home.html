@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIBELOCK - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+     
+    <aside class="sidebar">
+        <div class="logo"><a href="home.html">VIBELOCK</a></div>
+        <nav class="sidebar-nav">
+            <a href="home.html" class="nav-item active">HOME</a>
+            <a href="report.html" class="nav-item">REPORTS</a>
+            <a href="history.html" class="nav-item">HISTORY</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="thumb-1920-1363709.png" alt="Hero Background" class="hero-bg">
+            <div class="hero-content">
+                <p class="hero-subtitle">Welcome to:</p>
+                <h1 class="hero-title">VIBELOCK</h1>
+                
+
+            </div>
+        </section>
+
+        <!-- Quick Stats -->
+        <div class="quick-stats">
+            <div class="stat-box">
+                <span class="stat-icon">🔥</span>
+                <div class="stat-info">
+                    <p class="stat-label">Current Streak</p>
+                    <p class="stat-value">0 Days</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <span class="stat-icon">⏱️</span>
+                <div class="stat-info">
+                    <p class="stat-label">Today's Focus</p>
+                    <p class="stat-value">0:00:00</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <span class="stat-icon">🍅</span>
+                <div class="stat-info">
+                    <p class="stat-label">Pomodoros Today</p>
+                    <p class="stat-value">0</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <span class="stat-icon">🎯</span>
+                <div class="stat-info">
+                    <p class="stat-label">Weekly Goal</p>
+                    <p class="stat-value">0%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meeting Cards -->
+        <section class="meeting-section">
+            <!-- Join Meeting Card -->
+            <div class="meeting-card card-gray">
+                <h2 class="card-title">Join a Meeting</h2>
+                <input type="text" class="meeting-input" placeholder="Enter meeting code">
+                <button class="btn btn-join">JOIN</button>
+            </div>
+
+            <!-- Create Room Card -->
+            <div class="meeting-card card-blue">
+                <h2 class="card-title">Create a Room</h2>
+                <input type="text" class="meeting-input" placeholder="Enter the meeting's name">
+                <input type="text" class="meeting-input" placeholder="Enter your name ">
+                <input type="text" class="meeting-input meeting-link" placeholder="Meeting code would go here" readonly>
+                <button class="btn btn-create">CREATE</button>
+            </div>
+        </section>
+
+        <!-- Recent Activity -->
+        <section class="recent-activity">
+            <h2 class="section-title">Recent Sessions</h2>
+            <div class="activity-grid">
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <h2 class="section-title">Quick Actions</h2>
+            <div class="actions-grid">
+                <a href="report.html" class="action-card">
+                    <div class="action-icon">📊</div>
+                    <h3 class="action-title">View Reports</h3>
+                    <p class="action-desc">Check your detailed analytics</p>
+                </a>
+
+                <a href="history.html" class="action-card">
+                    <div class="action-icon">📅</div>
+                    <h3 class="action-title">Session History</h3>
+                    <p class="action-desc">Browse past sessions</p>
+                </a>
+
+                <a href="#" class="action-card">
+                    <div class="action-icon">🎥</div>
+                    <h3 class="action-title">Start Session</h3>
+                    <p class="action-desc">Begin a focus session</p>
+                </a>
+
+                <a href="report.html" class="action-card">
+                    <div class="action-icon">📈</div>
+                    <h3 class="action-title">Analytics</h3>
+                    <p class="action-desc">View detailed reports</p>
+                </a>
+            </div>
+        </section>
+    </main>
+<script src="home.js"></script>
+</body>
+</html>
