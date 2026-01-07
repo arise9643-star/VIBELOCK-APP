@@ -1,6 +1,6 @@
 const ORIGIN = window.location.origin || '';
 const IS_FILE = ORIGIN.startsWith('file');
-const API_URL = localStorage.getItem('API_URL') || (IS_FILE ? 'https://vibelock-app.onrender.com/api' : (ORIGIN.includes('localhost') || ORIGIN.includes('127.0.0.1')) ? 'https://vibelock-app.onrender.com/api' : '/api');
+const API_URL = 'https://vibelock-app.onrender.com/api';
 
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
     e.preventDefault();
