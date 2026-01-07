@@ -211,8 +211,8 @@ document.addEventListener('DOMContentLoaded', () => {
 const createRoomBtn = document.querySelector('.card-blue .btn-create');
 if (createRoomBtn) {
     createRoomBtn.addEventListener('click', async () => {
-        const roomNameInput = document.querySelector('.card-blue .meeting-input[placeholder="Enter the meeting\'s name"]');
-        const roomName = roomNameInput.value.trim();
+        const inputs = document.querySelectorAll('.card-blue .meeting-input');
+        const roomName = inputs[0].value.trim();
         
         if (!roomName) {
             alert('Please enter a room name');
@@ -232,10 +232,8 @@ if (createRoomBtn) {
             const data = await response.json();
             
             if (response.ok) {
-                const meetingLinkInput = document.querySelector('.card-blue .meeting-link');
-                meetingLinkInput.value = data.room.code;
+                inputs[2].value = data.room.code;
                 
-                // Redirect to call page after a short delay
                 setTimeout(() => {
                     window.location.href = `call.html?code=${data.room.code}`;
                 }, 1000);
