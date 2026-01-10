@@ -61,19 +61,21 @@ const getUserStats = async (req, res) => {
 
 const getLeaderboard = async (req, res) => {
   try {
-    const { limit = 10 } = req.query;
+    const { limit = 100 } = req.query;
     
     const result = await query(
       `SELECT 
         u.id, 
         u.name, 
+        u.email,
+        u.current_streak,
         COALESCE(SUM(s.duration_seconds), 0) as total_seconds,
         COALESCE(SUM(s.pomodoros_completed), 0) as total_pomodoros,
         COUNT(s.id) as total_sessions
        FROM users u
        LEFT JOIN sessions s ON u.id = s.user_id AND s.status = 'completed'
-       GROUP BY u.id, u.name
-       ORDER BY total_seconds DESC
+       GROUP BY u.id, u.name, u.email, u.current_streak
+       ORDER BY total_seconds DESC, u.id ASC
        LIMIT $1`,
       [limit]
     );
@@ -81,10 +83,13 @@ const getLeaderboard = async (req, res) => {
     const leaderboard = result.rows.map((row, index) => ({
       rank: index + 1,
       userId: row.id,
+      id: row.id,
       name: row.name,
+      email: row.email,
       totalSeconds: parseInt(row.total_seconds),
       totalPomodoros: parseInt(row.total_pomodoros),
-      totalSessions: parseInt(row.total_sessions)
+      totalSessions: parseInt(row.total_sessions),
+      streak: row.current_streak || 0
     }));
     
     res.json({ leaderboard });
@@ -94,5 +99,3 @@ const getLeaderboard = async (req, res) => {
     res.status(500).json({ error: 'Server error fetching leaderboard' });
   }
 };
-
-module.exports = { getUserStats, getLeaderboard };

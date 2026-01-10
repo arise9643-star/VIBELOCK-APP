@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRINDER - Leaderboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="leaderboard.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo"><a href="home.html">GRINDER</a></div>
+        <nav class="sidebar-nav">
+            <a href="home.html" class="nav-item">HOME</a>
+            <a href="report.html" class="nav-item">REPORTS</a>
+            <a href="history.html" class="nav-item">HISTORY</a>
+            <a href="leaderboard.html" class="nav-item active">LEADERBOARD</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1 class="page-title">Leaderboard</h1>
+
+        <!-- Hero Card -->
+        <div class="hero-card">
+            <div class="hero-content">
+                <span class="hero-label">RANKINGS</span>
+                <h2 class="hero-title">TOP GRINDERS</h2>
+            </div>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all-time">All Time</button>
+                <button class="filter-btn" data-filter="month">This Month</button>
+                <button class="filter-btn" data-filter="week">This Week</button>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search by username...">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>
+
+        <!-- Current User Card -->
+        <div class="current-user-card" id="currentUserCard" style="display: none;">
+            <div class="user-rank-badge" id="userRankBadge">1</div>
+            <div class="user-info">
+                <h3 id="currentUserName">Loading...</h3>
+                <p id="currentUserStats">-</p>
+            </div>
+            <div class="user-time" id="currentUserTime">0h 0m</div>
+        </div>
+
+        <!-- Leaderboard Table -->
+        <div class="leaderboard-container">
+            <div class="leaderboard-header">
+                <div class="col-rank">RANK</div>
+                <div class="col-name">USERNAME</div>
+                <div class="col-time">TOTAL TIME</div>
+                <div class="col-sessions">SESSIONS</div>
+                <div class="col-streak">STREAK</div>
+            </div>
+
+            <div class="leaderboard-list" id="leaderboardList">
+                <!-- Users will be loaded here -->
+                <div class="loading">Loading leaderboard...</div>
+            </div>
+        </div>
+
+        <!-- Stats Summary -->
+        <div class="stats-summary">
+            <div class="summary-card">
+                <div class="summary-icon">👥</div>
+                <div class="summary-info">
+                    <div class="summary-label">Total Players</div>
+                    <div class="summary-value" id="totalPlayers">0</div>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-icon">⏱️</div>
+                <div class="summary-info">
+                    <div class="summary-label">Global Focus Time</div>
+                    <div class="summary-value" id="globalFocusTime">0h</div>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-icon">🔥</div>
+                <div class="summary-info">
+                    <div class="summary-label">Avg Streak</div>
+                    <div class="summary-value" id="avgStreak">0 days</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="leaderboard.js"></script>
+</body>
+</html>
