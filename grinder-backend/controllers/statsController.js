@@ -99,3 +99,4 @@ const getLeaderboard = async (req, res) => {
     res.status(500).json({ error: 'Server error fetching leaderboard' });
   }
 };
+module.exports = { getUserStats, getLeaderboard };
